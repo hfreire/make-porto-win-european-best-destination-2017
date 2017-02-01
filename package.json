@@ -1,0 +1,33 @@
+{
+  "name": "make-porto-win-european-best-destination-2017",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "bluebird": "^3.4.0",
+    "health-checkup": "^1.0.3",
+    "lodash": "^4.17.2",
+    "node-emoji": "^1.5.1",
+    "pollmommy": "https://github.com/hfreire/pollmommy.git"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "eslint": "^3.3.1",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-plugin-mocha": "^4.3.0",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-standard": "^2.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "mocha-teamcity-reporter": "^1.1.1",
+    "standard": "^8.0.0",
+    "testdouble": "^1.9.0"
+  },
+  "scripts": {
+    "start": "node src/app.js",
+    "build": "$(which docker) build -t registry.exec.sh/$npm_package_name:$npm_package_version --build-arg=VERSION=`$(which git) rev-parse --abbrev-ref HEAD` --build-arg=VERSION_COMMIT=`$(which git) rev-parse --short HEAD` --build-arg=VERSION_BUILD_DATE=\"`$(which date)`\" -f ./share/docker/Dockerfile .",
+    "push": "$(which docker) push registry.exec.sh/$npm_package_name:$npm_package_version",
+    "test": "node_modules/.bin/eslint . && node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive test"
+  }
+}
