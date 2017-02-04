@@ -12,6 +12,8 @@ Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.
     <img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/european-best-destination-2017-vote.png" width="180">
 </p>
 <img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/european-best-destination-2017.png" width="430">
+<img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/voting-screencapture.gif" width="425">
+
 
 ### Features
 * Bypasses the poll voting limitations: Cookie and IP address :white_check_mark:
