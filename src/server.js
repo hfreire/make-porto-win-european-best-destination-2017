@@ -8,7 +8,7 @@
 const PORT = process.env.PORT || 3000
 const VOTE_PERIOD = process.env.VOTE_PERIOD || 5000
 const OPEN_PAGE_TIMEOUT = process.env.OPEN_PAGE_TIMEOUT || 120000
-const INJECTED_CODE_EXECUTION = process.env.INJECTED_CODE_EXECUTION || 90000
+const EXECUTION_TIMEOUT = process.env.EXECUTION_TIMEOUT || 90000
 const PROXY = process.env.PROXY
 
 const POLLDADDY_POLL_URL = 'http://www.europeanbestdestinations.com/best-of-europe/european-best-destinations-2017/'
@@ -45,7 +45,7 @@ class Server {
   constructor () {
     const options = {
       gotoTimeout: OPEN_PAGE_TIMEOUT,
-      executionTimeout: INJECTED_CODE_EXECUTION
+      executionTimeout: EXECUTION_TIMEOUT
     }
 
     if (PROXY) {

@@ -33,7 +33,7 @@
     "coverage": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive test",
     "test": "npm run lint && npm run coverage",
     "start": "node src/app.js",
-    "build": "$(which docker) build -t $npm_package_name:$npm_package_version --build-arg=VERSION=`$(which git) rev-parse --abbrev-ref HEAD` --build-arg=VERSION_COMMIT=`$(which git) rev-parse --short HEAD` --build-arg=VERSION_BUILD_DATE=\"`$(which date)`\" -f ./share/docker/Dockerfile .",
-    "push": "$(which docker) push $npm_package_name:$npm_package_version"
+    "build": "$(which docker) build -t hfreire/$npm_package_name:$npm_package_version --build-arg=VERSION=`$(which git) rev-parse --abbrev-ref HEAD` --build-arg=VERSION_COMMIT=`$(which git) rev-parse --short HEAD` --build-arg=VERSION_BUILD_DATE=\"`$(which date)`\" -f ./share/docker/Dockerfile .",
+    "push": "$(which docker) push hfreire/$npm_package_name:$npm_package_version"
   }
 }

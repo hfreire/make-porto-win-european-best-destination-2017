@@ -6,7 +6,7 @@
 [![](https://img.shields.io/github/release/hfreire/make-porto-win-european-best-destination-2017.svg)](https://github.com/hfreire/make-porto-win-european-best-destination-2017/releases)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.com/hfreire/rotating-proxy) to automate the election of Porto as the [European Best Destination 2017](http://www.europeanbestdestinations.com/best-of-europe/european-best-destinations-2017/) from [European Best Destinations](https://http://www.europeanbestdestinations.com).
+Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.com/hfreire/rotating-proxy) to hack the election of Porto as the [European Best Destination 2017](http://www.europeanbestdestinations.com/best-of-europe/european-best-destinations-2017/) from [European Best Destinations](https://http://www.europeanbestdestinations.com).
 
 ### Features
 * Bypasses the poll voting limitations: Cookie and IP address :white_check_mark:
@@ -16,13 +16,13 @@ Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.
 
 ### How to launch
 ```
-docker run make-porto-win-european-best-destination-2017:1.0.0
+docker run hfreire/make-porto-win-european-best-destination-2017:1.0.0
 ```
 #### Available environment variables
 * PROXY - Proxy hostname and port that will be used to tunnel the votes (default: not used)
 * VOTE_PERIOD - Time period between each vote (default: 5 seconds)
 * OPEN_PAGE_TIMEOUT - Timeout to open poll website (default: 120 seconds)
-* INJECTED_CODE_EXECUTION - Timeout to execute the injected code to vote (default: 90 seconds)
+* EXECUTION_TIMEOUT - Timeout to execute the injected code to vote (default: 90 seconds)
 
 ### How to build
 Clone the GitHub repo
@@ -30,7 +30,7 @@ Clone the GitHub repo
 git clone https://github.com/hfreire/make-porto-win-european-best-destination-2017.git
 ```
 
-Change directory
+Change current directory
 ```
 cd make-porto-win-european-best-destination-2017
 ```
@@ -41,4 +41,4 @@ npm run build
 ```
 
 ### Limitations
-* It's limited to the number of IP addresses from the [available Tor exit nodes during the voting period](https://metrics.torproject.org/relayflags.html?start=2017-01-20&end=2017-02-10&flag=Exit)
+* The number of IP addresses are limited to the [available Tor exit nodes during the voting period](https://metrics.torproject.org/relayflags.html?start=2017-01-20&end=2017-02-10&flag=Exit)
