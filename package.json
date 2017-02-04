@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "bluebird": "^3.4.0",
-    "health-checkup": "^1.0.3",
     "lodash": "^4.17.2",
     "node-emoji": "^1.5.1",
-    "pollmommy": "https://github.com/hfreire/pollmommy.git"
+    "pollmommy": "^1.0.4",
+    "rollbar": "^0.6.2",
+    "winston": "^2.2.0",
+    "moment": "^2.14.1"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",
@@ -16,7 +18,7 @@
     "eslint": "^3.3.1",
     "eslint-config-standard": "^6.0.0",
     "eslint-plugin-mocha": "^4.3.0",
-    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
