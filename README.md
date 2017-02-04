@@ -16,10 +16,10 @@ Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.
 
 
 ### Features
-* Bypasses the poll voting limitations: Cookie and IP address :white_check_mark:
+* Bypasses :shipit: the poll voting system protection :cop:: cookie :cookie: and IP address :computer: :white_check_mark:
 * Launch :rocket: inside a Docker container :whale: so you don't need to manage the dependencies :raised_hands: :white_check_mark:
 * Uses a Tor network setup that is optimized to deliver a different IP address on each vote :white_check_mark:
-* Quickly deploy and easily scale the number of voters by using Rancher :white_check_mark:
+* Quickly deploy :runner: and easily scale :two_men_holding_hands: the number of voters by using Rancher :white_check_mark:
 
 ### How to launch
 ```
