@@ -6,20 +6,19 @@
  */
 
 const PORT = process.env.PORT || 3000
-const POLL_PERIOD = process.env.POLL_PERIOD || 5000
+const VOTE_PERIOD = process.env.VOTE_PERIOD || 5000
+const OPEN_PAGE_TIMEOUT = process.env.OPEN_PAGE_TIMEOUT || 120000
+const INJECTED_CODE_EXECUTION = process.env.INJECTED_CODE_EXECUTION || 90000
+const PROXY = process.env.PROXY
 
-/*
-const POLLDADDY_POLL_URL = 'http://localhost:8000'
-const POLLDADDY_POLL_ID = '9651636'
-const POLLDADDY_POLL_OPTION_ID = '44138629'
-*/
-const POLLDADDY_POLL_URL = 'https://hugo.exec.sh'
-const POLLDADDY_POLL_ID = '9651636'
-const POLLDADDY_POLL_OPTION_ID = '44138629'
+const POLLDADDY_POLL_URL = 'http://www.europeanbestdestinations.com/best-of-europe/european-best-destinations-2017/'
+const POLLDADDY_POLL_ID = '9632536'
+const POLLDADDY_POLL_OPTION_ID = '44047129'
 
 const _ = require('lodash')
 const Promise = require('bluebird')
-const Health = require('health-checkup')
+
+const Logger = require('./utils/logger')
 
 const http = require('http')
 
@@ -27,19 +26,33 @@ const PollMommy = require('pollmommy')
 
 const emoji = require('node-emoji')
 
-function voteForPorto () {
+const vote = function () {
+  const start = new Date().getTime()
+
   return this.pollMommy.vote(POLLDADDY_POLL_URL, POLLDADDY_POLL_ID, POLLDADDY_POLL_OPTION_ID)
+    .then((geoip = {}) => {
+      const stop = new Date().getTime()
+      const ipAddress = geoip.ip || emoji.get('thinking_face') + ' '
+      const country = _.lowerCase(geoip.country)
+      const emojiFlag = emoji.get(`flag-${country}`) + ' '
+
+      Logger.info(`Voted for Porto from ${ipAddress} ${ipAddress ? 'in ' + emojiFlag : ''} (took ${stop - start} ms)`)
+    })
+    .catch((error) => Logger.error(error))
 }
 
 class Server {
   constructor () {
-    this.pollMommy = new PollMommy({
-      gotoTimeout: 90000,
-      executionTimeout: 60000,
-      switches: {
-        'proxy-server': '172.16.1.88:44438'
-      }
-    })
+    const options = {
+      gotoTimeout: OPEN_PAGE_TIMEOUT,
+      executionTimeout: INJECTED_CODE_EXECUTION
+    }
+
+    if (PROXY) {
+      options.switches = { 'proxy-server': PROXY }
+    }
+
+    this.pollMommy = new PollMommy(options)
   }
 
   start () {
@@ -48,21 +61,12 @@ class Server {
         return resolve()
       }
 
-      console.log(`Making Porto ${emoji.get('tada')}  great again`)
+      Logger.info(`Making Porto ${emoji.get('tada')}  great again`)
 
       this._httpServer = http.createServer((req, res) => {
         const url = req.url.indexOf('?') > 0 ? req.url.split('?')[ 0 ] : req.url
 
         switch (url) {
-          case '/healthcheck':
-            return Health.checkup()
-              .then((status) => {
-                const statusCode = _.find(status, (check) => !check.is_healthy) ? 503 : 200
-                const body = JSON.stringify(status)
-
-                res.writeHead(statusCode, { 'Content-Type': 'application/json' })
-                res.end(body)
-              })
           case '/ping':
             res.writeHead(200, { 'Content-Type': 'application/json' })
             return res.end(JSON.stringify({ answer: 'pong' }))
@@ -72,8 +76,8 @@ class Server {
         }
       }).listen(PORT)
 
-      if (POLL_PERIOD > 0) {
-        this.poll()
+      if (VOTE_PERIOD > 0) {
+        this.vote()
       }
 
       resolve()
@@ -82,7 +86,7 @@ class Server {
 
   stop () {
     return new Promise(resolve => {
-      console.log('Porto has become greater')
+      Logger.info('Porto has become greater')
 
       if (this._httpServer) {
         this._httpServer.close()
@@ -92,31 +96,14 @@ class Server {
     })
   }
 
-  poll () {
-    const _voteForPorto = () => {
-      const start = new Date().getTime()
+  vote () {
+    Logger.debug('Started voting')
 
-      return voteForPorto.bind(this)()
-        .then((geoip = {}) => {
-          const stop = new Date().getTime()
-          const ipAddress = geoip.ip || emoji.get('thinking_face') + ' '
-          const country = _.lowerCase(geoip.country)
-          const emojiFlag = emoji.get(`flag-${country}`) + ' '
-
-          console.log(`Voted for Porto from ${ipAddress} in ${emojiFlag} (took ${stop - start} ms)`)
-        })
-        .catch((error) => {
-          console.error(`Failed to vote because of ${error.message}`)
-
-          if (error.message === 'undefined') {
-            console.error(error.stack)
-          }
-        })
-    }
-
-    return _voteForPorto()
+    return vote.bind(this)()
       .finally(() => {
-        this.timeout = setTimeout(() => this.poll(), POLL_PERIOD)
+        Logger.debug('Finished voting')
+
+        this.timeout = setTimeout(() => this.vote(), VOTE_PERIOD)
       })
   }
 }
