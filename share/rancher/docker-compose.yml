@@ -1,0 +1,7 @@
+server:
+  image: registry.exec.sh/make-porto-win-european-best-destination-2017:1.0.0
+  restart: always
+  environment:
+    PROXY: tor-lb:44438
+  links:
+    - tor-lb:tor-lb.tor
