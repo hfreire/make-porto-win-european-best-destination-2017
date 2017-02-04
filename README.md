@@ -21,9 +21,9 @@ Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.
 * Uses a Tor network setup that is optimized to deliver a different IP address on each vote :white_check_mark:
 * Quickly deploy :runner: and easily scale :two_men_holding_hands: the number of voters by using Rancher :white_check_mark:
 
-### How to launch
+### How to use
 ```
-docker run hfreire/make-porto-win-european-best-destination-2017:1.0.0
+docker run hfreire/make-porto-win-european-best-destination-2017
 ```
 #### Available environment variables
 * PROXY - Proxy hostname and port that will be used to tunnel the votes (default: not used)
