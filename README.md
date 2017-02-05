@@ -1,4 +1,6 @@
 # Let's make :city_sunrise: Porto :trophy: win the :euro: European Best Destination :tada: 2017
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/hfreire/make-porto-win-european-best-destination-2017.svg)](https://greenkeeper.io/)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Build Status](https://travis-ci.org/hfreire/make-porto-win-european-best-destination-2017.svg?branch=master)](https://travis-ci.org/hfreire/make-porto-win-european-best-destination-2017)
 [![Coverage Status](https://coveralls.io/repos/github/hfreire/make-porto-win-european-best-destination-2017/badge.svg?branch=master)](https://coveralls.io/github/hfreire/make-porto-win-european-best-destination-2017?branch=master)
