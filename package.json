@@ -30,7 +30,7 @@
   "scripts": {
     "clean": "rm -rf coverage",
     "lint": "node_modules/.bin/eslint .",
-    "coverage": "node_modules/.bin/istanbul cover --include-all-sources ./node_modules/mocha/bin/_mocha -- --recursive test",
+    "coverage": "node_modules/.bin/istanbul cover --root . ./node_modules/mocha/bin/_mocha -- --recursive test",
     "test": "npm run lint && npm run coverage",
     "build": "$(which docker) build -t hfreire/$npm_package_name:$npm_package_version --build-arg=VERSION=`$(which git) rev-parse --abbrev-ref HEAD` --build-arg=VERSION_COMMIT=`$(which git) rev-parse --short HEAD` --build-arg=VERSION_BUILD_DATE=\"`$(which date)`\" -f ./share/docker/Dockerfile .",
     "push": "$(which docker) push hfreire/$npm_package_name:$npm_package_version",
