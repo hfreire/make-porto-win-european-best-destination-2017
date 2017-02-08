@@ -43,7 +43,7 @@
     "push": "$(which docker) push hfreire/$npm_package_name:$npm_package_version",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "start": "node src/app.js",
-    "semantic-release": "./node_modules/.bin/semantic-release pre && npm publish && node_modules/.bin/semantic-release post",
+    "semantic-release": "./node_modules/.bin/semantic-release pre && node_modules/.bin/semantic-release post",
     "commit": "./node_modules/.bin/commit-wizard"
   }
 }
