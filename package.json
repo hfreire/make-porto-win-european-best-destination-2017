@@ -7,7 +7,7 @@
     "bluebird": "3.4.0",
     "lodash": "4.17.2",
     "node-emoji": "1.5.1",
-    "pollmommy": "1.0.5",
+    "pollmommy": "1.0.6",
     "rollbar": "0.6.2",
     "winston": "2.2.0",
     "moment": "2.14.1"
