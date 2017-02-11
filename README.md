@@ -27,10 +27,12 @@ Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.
 docker run hfreire/make-porto-win-european-best-destination-2017
 ```
 #### Available environment variables
-* PROXY - Proxy hostname and port that will be used to tunnel the votes (default: not used)
-* VOTE_PERIOD - Time period between each vote (default: 5 seconds)
-* OPEN_PAGE_TIMEOUT - Timeout to open poll website (default: 120 seconds)
-* EXECUTION_TIMEOUT - Timeout to execute the injected code to vote (default: 90 seconds)
+Variable | Description | Default value
+ --- |:---:|:---:
+PROXY | Proxy hostname and port that will be used to tunnel the votes | `not used`
+VOTE_PERIOD | Time period between each vote | 5 seconds
+OPEN_PAGE_TIMEOUT | Timeout to open poll website | 120 seconds
+EXECUTION_TIMEOUT | Timeout to execute the injected code to vote | 90 seconds
 
 ### How to build
 Clone the GitHub repo
