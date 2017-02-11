@@ -17,7 +17,7 @@ Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.
 <p align="center" style="margin-top:0px;margin-bottom:0px;"><img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/european-best-destination-2017-winner.png" width="150"></p>
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/voting-winner.png" width="430">
+    <img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/voting-winner.png" width="420">
 </p>
 
 ### Features
