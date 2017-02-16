@@ -18,7 +18,7 @@ const POLLDADDY_POLL_OPTION_ID = '44047129'
 const _ = require('lodash')
 const Promise = require('bluebird')
 
-const Logger = require('./utils/logger')
+const Logger = require('modern-logger')
 
 const http = require('http')
 

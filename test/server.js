@@ -15,7 +15,7 @@ describe('Server', () => {
     http = td.replace('http', td.object([ 'createServer' ]))
     httpServer = td.object([ 'listen', 'close' ])
     Logger = td.object([ 'info' ])
-    td.replace('../src/utils/logger', Logger)
+    td.replace('modern-logger', Logger)
 
     td.when(http.createServer(td.matchers.anything()))
       .thenReturn(httpServer)
