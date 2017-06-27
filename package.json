@@ -25,12 +25,17 @@
     "chai": "3.5.0",
     "chai-as-promised": "6.0.0",
     "coveralls": "2.11.15",
-    "eslint": "3.3.1",
-    "eslint-config-standard": "6.0.0",
-    "eslint-plugin-mocha": "4.3.0",
-    "eslint-plugin-promise": "3.4.0",
-    "eslint-plugin-standard": "2.0.0",
+    "eslint": "4.1.0",
+    "eslint-config-hfreire": "1.0.6",
+    "eslint-plugin-import": "2.6.0",
+    "eslint-plugin-json": "1.2.0",
+    "eslint-plugin-mocha": "4.11.0",
+    "eslint-plugin-node": "5.0.0",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-standard": "3.0.1",
+    "eslint-plugin-unicorn": "2.1.2",
     "istanbul": "0.4.5",
+    "last-release-github": "1.1.1",
     "mocha": "3.0.2",
     "semantic-release": "6.3.2",
     "pre-git": "3.12.1",
@@ -42,16 +47,19 @@
       "commit-msg": "conventional"
     }
   },
+  "release": {
+    "getLastRelease": "last-release-github"
+  },
   "scripts": {
+    "commit": "./node_modules/.bin/commit-wizard",
+    "lint": "node_modules/.bin/eslint . --ext .json --ext .js",
     "clean": "rm -rf coverage",
-    "lint": "node_modules/.bin/eslint .",
     "coverage": "node_modules/.bin/istanbul cover --include-all-sources --root src --print detail ./node_modules/mocha/bin/_mocha -- --recursive test",
     "test": "npm run lint && npm run coverage",
-    "build": "$(which docker) build -t hfreire/$npm_package_name:$npm_package_version --build-arg=VERSION=`$(which git) rev-parse --abbrev-ref HEAD` --build-arg=VERSION_COMMIT=`$(which git) rev-parse --short HEAD` --build-arg=VERSION_BUILD_DATE=\"`$(which date)`\" -f ./share/docker/Dockerfile .",
-    "push": "$(which docker) push hfreire/$npm_package_name:$npm_package_version",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "start": "node src/app.js",
     "semantic-release": "./node_modules/.bin/semantic-release pre && node_modules/.bin/semantic-release post",
-    "commit": "./node_modules/.bin/commit-wizard"
+    "build": "pushd ./share/docker; NAME=$npm_package_name ./hooks/build; popd",
+    "push": "pushd ./share/docker; NAME=$npm_package_name ./hooks/push; popd",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "start": "node src/app.js"
   }
 }
