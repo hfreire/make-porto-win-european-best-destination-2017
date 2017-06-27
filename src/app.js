@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+#!/usr/bin/env node
+
 const VERSION = process.env.VERSION
 const VERSION_COMMIT = process.env.VERSION_COMMIT
 const VERSION_BUILD_DATE = process.env.VERSION_BUILD_DATE
@@ -18,41 +20,24 @@ if (VERSION && VERSION_COMMIT && VERSION_BUILD_DATE) {
 const Server = require('./server')
 
 // shutdown gracefully
-function _shutdown () {
+const shutdown = (exitStatus = 0) => {
   return Server.stop()
     .timeout(1000)
     .finally(() => {
-      process.exit(0)
+      process.exit(exitStatus)
     })
 }
 
-process.on('SIGINT', _shutdown)
-process.on('SIGTERM', _shutdown)
+const logErrorAndShutdown = (error) => {
+  return Logger.error(error)
+    .then(() => shutdown(1))
+}
 
-// force immediate shutdown, i.e. systemd watchdog?
-process.on('SIGABRT', function () {
-  process.exit(1)
-})
-
-process.on('SIGHUP', function () { // reload
-  _shutdown()
-})
-
-// stop and then shutdown, i.e. forever daemon
-process.once('SIGUSR2', function () {
-  Server.stop(function () {
-    process.kill(process.pid, 'SIGUSR2')
-  })
-})
-
-process.on('exit', function () {
-})
-
-process.on('uncaughtException', error => {
-  Logger.error(error, _shutdown)
-})
-process.on('unhandledRejection', error => {
-  Logger.error(error, _shutdown)
-})
+process.on('SIGINT', shutdown)
+process.on('SIGTERM', shutdown)
+process.on('SIGHUP', shutdown) // reload
+process.on('SIGABRT', () => process.exit(1)) // force immediate shutdown, i.e. systemd watchdog?
+process.on('uncaughtException', logErrorAndShutdown)
+process.on('unhandledRejection', logErrorAndShutdown)
 
 Server.start()
