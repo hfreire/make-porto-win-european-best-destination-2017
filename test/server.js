@@ -5,47 +5,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+const { Serverful } = require('serverful')
+
 describe('Server', () => {
   let subject
-  let http
-  let httpServer
-  let Logger
 
-  before(() => {
-    http = td.replace('http', td.object([ 'createServer' ]))
-    httpServer = td.object([ 'listen', 'close' ])
-    Logger = td.object([ 'info' ])
-    td.replace('modern-logger', Logger)
-
-    td.when(http.createServer(td.matchers.anything()))
-      .thenReturn(httpServer)
-  })
-
-  afterEach(() => {
-    td.reset()
-  })
-
-  describe('when starting with voting disabled', () => {
-    const vote = td.function()
-
-    process.env.VOTE_PERIOD = 0
-
-    before(() => {
-      subject = require('../src/server')
-      subject.vote = vote
-    })
-
+  describe('when loading', () => {
     beforeEach(() => {
+      subject = require('../src/server')
     })
 
-    after(() => {
-      delete require.cache[ require.resolve('../src/server') ]
-    })
-
-    it('should not vote', () => {
-      subject.start()
-
-      td.verify(vote(), { times: 0 })
+    it('should return an instance of serverful', () => {
+      subject.should.be.instanceOf(Serverful)
     })
   })
 })
