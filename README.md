@@ -33,16 +33,19 @@ Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.
 * Quickly deploy :runner: and easily scale :two_men_holding_hands: the number of voters by using Rancher :white_check_mark:
 
 ### How to use
+
+#### Use it in your terminal
+Run the Docker image in a container
 ```
 docker run hfreire/make-porto-win-european-best-destination-2017
 ```
 #### Available environment variables
-Variable | Description | Default value
- --- |:---:|:---:
-PROXY | Proxy hostname and port that will be used to tunnel the votes | `not used`
-VOTE_PERIOD | Time period between each vote | 5 seconds
-OPEN_PAGE_TIMEOUT | Timeout to open poll website | 120 seconds
-EXECUTION_TIMEOUT | Timeout to execute the injected code to vote | 90 seconds
+Variable | Description | Required | Default value
+:---:|:---:|:---:|:---:
+PROXY | Proxy hostname and port that will be used to tunnel the votes | false |`undefined`
+VOTE_PERIOD | Time period (in seconds) between each vote | false | `5`
+OPEN_PAGE_TIMEOUT | Timeout (in seconds) to open poll website | false | `120`
+EXECUTION_TIMEOUT | Timeout (in seconds) to execute the injected code to vote | false | `90`
 
 ### How to build
 Clone the GitHub repo
@@ -55,7 +58,12 @@ Change current directory
 cd make-porto-win-european-best-destination-2017
 ```
 
-Run the NPM script that will build the docker container
+Install dependencies
+```
+npm install
+```
+
+Run the NPM script that will build the Docker image
 ```
 npm run build
 ```
@@ -68,7 +76,8 @@ npm run build
 <p align="center">
     <img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/expresso-20170211.jpeg" width="274">
 </p>
+
 <p align="center">
-    <img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/european-best-destination-2017-closed_tweet.png" width="374">
-    <img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/european-best-destination-2017-winner_tweet.png" width="374">
+    <img src="share/github/european-best-destination-2017-closed_tweet.png" width="374">
+    <img src="share/github/european-best-destination-2017-winner_tweet.png" width="374">
 </p>
