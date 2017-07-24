@@ -12,15 +12,18 @@ Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.
 <p align="center" style="margin-top:-30px;margin-bottom:0px;">
   <img src="share/github/european-best-destination-2017-vote.png" width="180">
 </p>
-<img src="share/github/european-best-destination-2017.png" width="430">
-<img src="share/github/voting-screencapture.gif" width="425">
+
+<p>
+  <img src="share/github/european-best-destination-2017.png" width="430">
+  <img src="share/github/voting-screencapture.gif" width="425">
+</p>
 
 <p align="center" style="margin-top:0px;margin-bottom:0px;">
   <img src="share/github/european-best-destination-2017-winner.png" width="150">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/hfreire/make-porto-win-european-best-destination-2017/master/share/github/voting-winner.png" width="420">
+  <img src="share/github/voting-winner.png" width="420">
 </p>
 
 ### Features
