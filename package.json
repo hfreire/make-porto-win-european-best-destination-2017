@@ -19,7 +19,7 @@
     "modern-logger": "1.4.0",
     "node-emoji": "1.8.1",
     "pollmommy": "1.0.8",
-    "serverful": "1.1.13"
+    "serverful": "1.1.14"
   },
   "devDependencies": {
     "babel-eslint": "8.0.0",
