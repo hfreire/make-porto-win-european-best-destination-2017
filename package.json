@@ -16,7 +16,7 @@
     "bluebird": "3.5.0",
     "health-checkup": "1.0.14",
     "lodash": "4.17.4",
-    "modern-logger": "1.4.2",
+    "modern-logger": "1.4.3",
     "node-emoji": "1.8.1",
     "pollmommy": "1.0.10",
     "serverful": "1.1.16"
