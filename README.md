@@ -6,6 +6,8 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/hfreire/make-porto-win-european-best-destination-2017.svg)](https://greenkeeper.io/)
 [![](https://img.shields.io/github/release/hfreire/make-porto-win-european-best-destination-2017.svg)](https://github.com/hfreire/make-porto-win-european-best-destination-2017/releases)
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Docker Stars](https://img.shields.io/docker/stars/hfreire/make-porto-win-european-best-destination-2017.svg)](https://hub.docker.com/r/hfreire/make-porto-win-european-best-destination-2017/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/hfreire/make-porto-win-european-best-destination-2017.svg)](https://hub.docker.com/r/hfreire/make-porto-win-european-best-destination-2017/)
 
 Uses [Pollmommy](https://github.com/hfreire/pollmommy) and [Tor](https://github.com/hfreire/rotating-proxy) to hack the election of Porto as the [European Best Destination 2017](http://www.europeanbestdestinations.com/best-of-europe/european-best-destinations-2017/) from [European Best Destinations](https://http://www.europeanbestdestinations.com).
 
