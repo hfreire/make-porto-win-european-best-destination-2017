@@ -48,6 +48,12 @@ PROXY | Proxy hostname and port that will be used to tunnel the votes. | false |
 VOTE_PERIOD | Time period (in seconds) between each vote. | false | `5`
 OPEN_PAGE_TIMEOUT | Timeout (in seconds) to open poll website. | false | `120`
 EXECUTION_TIMEOUT | Timeout (in seconds) to execute the injected code to vote. | false | `90`
+PORT | The port to be used by the HTTP server. | false | `3000`
+API_KEYS | The secret keys that should be used when securing endpoints. | false | `undefined`
+SO_TIMEOUT | TCP socket connection timeout. | false | `120000`
+LOG_LEVEL | The log level verbosity. | false | `info`
+ENVIRONMENT | The environment the app is running on. | false | `undefined`
+ROLLBAR_API_KEY | The server API key used to talk with Rollbar. | false | `undefined`
 
 ### How to build
 Clone the GitHub repo
@@ -58,11 +64,6 @@ git clone https://github.com/hfreire/make-porto-win-european-best-destination-20
 Change current directory
 ```
 cd make-porto-win-european-best-destination-2017
-```
-
-Install dependencies
-```
-npm install
 ```
 
 Run the NPM script that will build the Docker image
