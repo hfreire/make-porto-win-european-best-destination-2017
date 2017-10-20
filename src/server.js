@@ -22,8 +22,6 @@ const Logger = require('modern-logger')
 
 const PollMommy = require('pollmommy')
 
-const emoji = require('node-emoji')
-
 const vote = () => {
   const startDate = _.now()
 
@@ -33,9 +31,9 @@ const vote = () => {
     .then((geoip = {}) => {
       const stopDate = _.now()
       const duration = _.round((stopDate - startDate) / 1000, 1)
-      const ipAddress = geoip.ip || emoji.get('thinking_face') + ' '
+      const ipAddress = geoip.ip || `:thinking_face: `
       const country = _.lowerCase(geoip.country)
-      const emojiFlag = emoji.get(`flag-${country}`) + ' '
+      const emojiFlag = `:flag-${country}: `
 
       Logger.info(`Voted for Porto from ${ipAddress} ${ipAddress ? 'in ' + emojiFlag : ''} (took ${duration} ms)`)
     })
@@ -68,7 +66,7 @@ class Server extends Serverful {
   }
 
   start () {
-    return Logger.info(`Making Porto ${emoji.get('tada')}  great again`)
+    return Logger.info(`Making Porto :tada: great again`)
       .then(() => {
         if (VOTE_PERIOD > 0) {
           vote()
