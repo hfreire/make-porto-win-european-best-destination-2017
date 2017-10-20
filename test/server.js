@@ -9,15 +9,12 @@ describe('Server', () => {
   let subject
   let serverful
   let Logger
-  let PollMommy
 
   before(() => {
     serverful = td.object([])
     serverful.Serverful = td.constructor([])
 
-    Logger = td.object([ 'debug', 'info', 'error' ])
-
-    PollMommy = td.constructor([ 'start' ])
+    Logger = td.object([ 'info', 'error' ])
   })
 
   after(() => td.reset())
@@ -27,8 +24,6 @@ describe('Server', () => {
       td.replace('serverful', serverful)
 
       td.replace('modern-logger', Logger)
-
-      td.replace('pollmommy', PollMommy)
 
       subject = require('../src/server')
     })

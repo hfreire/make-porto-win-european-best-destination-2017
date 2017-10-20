@@ -53,7 +53,8 @@
     }
   },
   "release": {
-    "getLastRelease": "last-release-github"
+    "getLastRelease": "last-release-github",
+    "analyzeCommits": "simple-commit-message"
   },
   "scripts": {
     "commit": "./node_modules/.bin/commit-wizard",
