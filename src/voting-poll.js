@@ -21,8 +21,10 @@ const Pollmommy = require('pollmommy')
 
 const defaultOptions = {
   pollmommy: {
-    gotoTimeout: OPEN_PAGE_TIMEOUT,
-    executionTimeout: EXECUTION_TIMEOUT
+    nightmare: {
+      gotoTimeout: OPEN_PAGE_TIMEOUT,
+      executionTimeout: EXECUTION_TIMEOUT
+    }
   }
 }
 
@@ -31,7 +33,7 @@ class VotingPoll {
     this._options = _.defaultsDeep(options, defaultOptions)
 
     if (PROXY) {
-      _.merge(this._options.pollmommy, { switches: { 'proxy-server': PROXY } })
+      _.set(this._options.pollmommy, 'nightmare.switches.proxy-server', PROXY)
     }
 
     this._pollmommy = new Pollmommy(this._options.pollmommy)
