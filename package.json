@@ -14,10 +14,10 @@
   "homepage": "https://github.com/hfreire/make-porto-win-european-best-destination-2017#readme",
   "dependencies": {
     "bluebird": "3.5.1",
-    "health-checkup": "1.0.15",
+    "health-checkup": "1.0.17",
     "lodash": "4.17.4",
     "modern-logger": "1.5.1",
-    "pollmommy": "1.1.0",
+    "pollmommy": "1.1.2",
     "serverful": "1.1.21"
   },
   "devDependencies": {
@@ -26,7 +26,7 @@
     "chai-as-promised": "7.1.1",
     "coveralls": "2.13.3",
     "eslint": "4.10.0",
-    "eslint-config-hfreire": "1.0.8",
+    "eslint-config-hfreire": "1.0.9",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-mocha": "4.11.0",
@@ -38,7 +38,7 @@
     "last-release-github": "1.1.1",
     "mocha": "4.0.1",
     "semantic-release": "7.0.2",
-    "pre-git": "3.15.3",
+    "pre-git": "3.16.0",
     "standard": "10.0.3",
     "testdouble": "3.2.6"
   },
