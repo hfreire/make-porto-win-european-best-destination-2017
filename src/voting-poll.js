@@ -30,7 +30,7 @@ const defaultOptions = {
 
 class VotingPoll {
   constructor (options = {}) {
-    this._options = _.defaultsDeep(options, defaultOptions)
+    this._options = _.defaultsDeep({}, options, defaultOptions)
 
     if (PROXY) {
       _.set(this._options.pollmommy, 'nightmare.switches.proxy-server', PROXY)
