@@ -14,11 +14,11 @@
   "homepage": "https://github.com/hfreire/make-porto-win-european-best-destination-2017#readme",
   "dependencies": {
     "bluebird": "3.5.1",
-    "health-checkup": "1.0.17",
+    "health-checkup": "1.0.18",
     "lodash": "4.17.4",
     "modern-logger": "1.5.4",
     "pollmommy": "1.1.4",
-    "serverful": "1.1.24"
+    "serverful": "1.1.25"
   },
   "devDependencies": {
     "babel-eslint": "8.0.2",
