@@ -17,7 +17,7 @@ const vote = () => {
   return VotingPoll.vote()
     .catch((error) => Logger.error(error))
     .finally(() => {
-      this.timeout = setTimeout(() => this.vote(), VOTE_PERIOD)
+      this._timeout = setTimeout(() => vote(), VOTE_PERIOD)
     })
 }
 
@@ -27,14 +27,18 @@ class Server extends Serverful {
       .then(() => Logger.info('Making Porto :tada: great again'))
       .then(() => {
         if (VOTE_PERIOD > 0) {
-          vote()
+          vote.bind(this)()
         }
       })
   }
 
   stop () {
     return Logger.info('Porto has become greater')
-      .then(() => super.stop())
+      .then(() => {
+        clearTimeout(this._timeout)
+
+        super.stop()
+      })
   }
 }
 
