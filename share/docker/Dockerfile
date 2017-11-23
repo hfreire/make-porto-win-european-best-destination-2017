@@ -1,4 +1,4 @@
-FROM node:6.11.3
+FROM node:8.9.0-slim
 
 MAINTAINER hugo@exec.sh
 
@@ -22,6 +22,7 @@ WORKDIR $HOME
 RUN apt-get update &&\
     apt-get install -y libgtk2.0-0 libgconf-2-4 libasound2 libxtst6 libxss1 libnss3 xvfb &&\
     apt-get install -y build-essential git python &&\
+    apt-get install -y netcat &&\
     apt-get clean
 COPY package.json $HOME
 RUN npm install --production
