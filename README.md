@@ -39,8 +39,12 @@
 #### Use it in your terminal
 Run the Docker image in a container
 ```
-docker run hfreire/make-porto-win-european-best-destination-2017
+docker run -d -p "3000:3000" hfreire/make-porto-win-european-best-destination-2017
 ```
+
+#### Available REST API endpoints
+Swagger documentation available at `http://localhost:3000/docs`.
+
 #### Available environment variables
 Variable | Description | Required | Default value
 :---:|:---:|:---:|:---:
