@@ -2,6 +2,9 @@
   "name": "make-porto-win-european-best-destination-2017",
   "description": "Let's make Porto win the European Best Destination 2017",
   "version": "0.0.0",
+  "engines": {
+    "node": ">= 6.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hfreire/make-porto-win-european-best-destination-2017.git"
@@ -49,7 +52,8 @@
   },
   "config": {
     "pre-git": {
-      "commit-msg": "conventional"
+      "commit-msg": "conventional",
+      "allow-untracked-files": true
     }
   },
   "release": {
