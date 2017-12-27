@@ -41,7 +41,7 @@
     "last-release-github": "1.1.1",
     "mocha": "4.0.1",
     "semantic-release": "7.0.2",
-    "pre-git": "3.16.0",
+    "pre-git": "3.17.0",
     "standard": "10.0.3",
     "testdouble": "3.3.0"
   },
