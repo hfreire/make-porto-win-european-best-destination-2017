@@ -43,7 +43,7 @@
     "semantic-release": "7.0.2",
     "pre-git": "3.17.0",
     "standard": "10.0.3",
-    "testdouble": "3.3.3"
+    "testdouble": "3.3.4"
   },
   "greenkeeper": {
     "ignore": [
