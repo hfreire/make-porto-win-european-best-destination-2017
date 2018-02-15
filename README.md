@@ -1,11 +1,8 @@
 # Let's make :city_sunrise: Porto :trophy: win the :euro: European Best Destination :tada: 2017
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Build Status](https://travis-ci.org/hfreire/make-porto-win-european-best-destination-2017.svg?branch=master)](https://travis-ci.org/hfreire/make-porto-win-european-best-destination-2017)
 [![Coverage Status](https://coveralls.io/repos/github/hfreire/make-porto-win-european-best-destination-2017/badge.svg?branch=master)](https://coveralls.io/github/hfreire/make-porto-win-european-best-destination-2017?branch=master)
-[![Greenkeeper badge](https://badges.greenkeeper.io/hfreire/make-porto-win-european-best-destination-2017.svg)](https://greenkeeper.io/)
 [![](https://img.shields.io/github/release/hfreire/make-porto-win-european-best-destination-2017.svg)](https://github.com/hfreire/make-porto-win-european-best-destination-2017/releases)
-[![](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Docker Stars](https://img.shields.io/docker/stars/hfreire/make-porto-win-european-best-destination-2017.svg)](https://hub.docker.com/r/hfreire/make-porto-win-european-best-destination-2017/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hfreire/make-porto-win-european-best-destination-2017.svg)](https://hub.docker.com/r/hfreire/make-porto-win-european-best-destination-2017/)
 
@@ -39,8 +36,12 @@
 #### Use it in your terminal
 Run the Docker image in a container
 ```
-docker run hfreire/make-porto-win-european-best-destination-2017
+docker run -d -p "3000:3000" hfreire/make-porto-win-european-best-destination-2017
 ```
+
+#### Available REST API endpoints
+Swagger documentation available at `http://localhost:3000/docs`.
+
 #### Available environment variables
 Variable | Description | Required | Default value
 :---:|:---:|:---:|:---:
@@ -84,3 +85,11 @@ npm run build
     <img src="share/github/european-best-destination-2017-closed_tweet.png" width="374">
     <img src="share/github/european-best-destination-2017-winner_tweet.png" width="374">
 </p>
+
+### How to contribute
+You can contribute either with code (e.g., new features, bug fixes and documentation) or by [donating 5 EUR](https://paypal.me/hfreire/5). You can read the [contributing guidelines](CONTRIBUTING.md) for instructions on how to contribute with code. 
+
+All donation proceedings will go to the [Sverige för UNHCR](https://sverigeforunhcr.se), a swedish partner of the [UNHCR - The UN Refugee Agency](http://www.unhcr.org), a global organisation dedicated to saving lives, protecting rights and building a better future for refugees, forcibly displaced communities and stateless people.
+
+### License
+Read the [license](./LICENSE.md) for permissions and limitations.
