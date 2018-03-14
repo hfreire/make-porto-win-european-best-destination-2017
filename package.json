@@ -17,32 +17,31 @@
   "homepage": "https://github.com/hfreire/make-porto-win-european-best-destination-2017#readme",
   "dependencies": {
     "bluebird": "3.5.1",
-    "health-checkup": "1.0.18",
-    "lodash": "4.17.4",
-    "modern-logger": "1.5.12",
+    "health-checkup": "1.0.19",
+    "lodash": "4.17.5",
+    "modern-logger": "1.5.13",
     "pollmommy": "1.1.2",
-    "serverful": "1.1.25"
+    "serverful": "1.1.26"
   },
   "devDependencies": {
-    "babel-eslint": "8.1.2",
+    "babel-eslint": "8.2.2",
     "chai": "4.1.2",
     "chai-as-promised": "7.1.1",
     "coveralls": "2.13.3",
-    "eslint": "4.14.0",
+    "eslint": "4.18.2",
     "eslint-config-hfreire": "1.0.11",
-    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-import": "2.9.0",
     "eslint-plugin-json": "1.2.0",
-    "eslint-plugin-mocha": "4.11.0",
-    "eslint-plugin-node": "5.2.1",
-    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-mocha": "4.12.0",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-promise": "3.7.0",
     "eslint-plugin-standard": "3.0.1",
-    "eslint-plugin-unicorn": "3.0.1",
+    "eslint-plugin-unicorn": "4.0.2",
     "istanbul": "0.4.5",
-    "mocha": "4.0.1",
+    "mocha": "5.0.3",
     "semantic-release": "15.0.3",
-    "pre-git": "3.16.0",
-    "standard": "10.0.3",
-    "testdouble": "3.3.0"
+    "pre-git": "3.17.1",
+    "testdouble": "3.5.2"
   },
   "greenkeeper": {
     "ignore": [
@@ -62,7 +61,8 @@
         "npmPublish": false
       },
       "@semantic-release/github"
-    ]
+    ],
+    "analyzeCommits": "simple-commit-message"
   },
   "scripts": {
     "commit": "./node_modules/.bin/commit-wizard",
