@@ -19,7 +19,7 @@
     "bluebird": "3.5.2",
     "health-checkup": "1.0.20",
     "lodash": "4.17.9",
-    "modern-logger": "1.5.23",
+    "modern-logger": "1.5.24",
     "pollmommy": "1.1.2",
     "serverful": "1.3.3"
   },
