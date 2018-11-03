@@ -21,7 +21,7 @@
     "lodash": "4.17.11",
     "modern-logger": "1.5.27",
     "pollmommy": "1.1.2",
-    "serverful": "1.4.15"
+    "serverful": "1.4.16"
   },
   "devDependencies": {
     "babel-eslint": "10.0.1",
