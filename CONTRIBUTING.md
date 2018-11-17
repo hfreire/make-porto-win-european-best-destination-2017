@@ -11,7 +11,7 @@ git clone https://github.com/my-github-username/make-porto-win-european-best-des
 
 Change current directory
 ```
-cd get-me-date
+cd make-porto-win-european-best-destination-2017
 ```
 
 Install NPM dependencies
