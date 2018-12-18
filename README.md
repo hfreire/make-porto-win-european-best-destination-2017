@@ -39,6 +39,15 @@ Run the Docker image in a container
 docker run -d -p "3000:3000" hfreire/make-porto-win-european-best-destination-2017
 ```
 
+#### Use it in with Tor on Mac OS X
+Run the Docker image in a cointainer using the Tor network
+```
+brew install tor
+echo "MaxCircuitDirtiness 10" >> /usr/local/etc/tor/torrc
+tor &
+docker run -p "3000:3000" -e PROXY=socks5://172.17.0.1:9050 -e VOTE_PERIOD=10000 hfreire/make-porto-win-european-best-destination-2017
+```
+
 #### Available REST API endpoints
 Swagger documentation available at `http://localhost:3000/docs`.
 
