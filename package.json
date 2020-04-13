@@ -3,7 +3,7 @@
   "description": "Let's make Porto win the European Best Destination 2017",
   "version": "0.0.0",
   "engines": {
-    "node": ">= 6.0.0"
+    "node": ">= 10.15"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,9 @@
     "chai-as-promised": "7.1.1",
     "coveralls": "3.0.11",
     "eslint": "6.8.0",
-    "eslint-config-hfreire": "3.0.13",
+    "eslint-config-hfreire": "2.0.7",
     "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-jest": "23.8.2",
     "eslint-plugin-json": "2.1.1",
     "eslint-plugin-mocha": "6.3.0",
     "eslint-plugin-node": "11.1.0",
@@ -41,12 +42,8 @@
     "mocha": "7.1.1",
     "semantic-release": "17.0.4",
     "pre-git": "3.17.1",
+    "snyk": "1.305.1",
     "testdouble": "3.13.1"
-  },
-  "greenkeeper": {
-    "ignore": [
-      "semantic-release"
-    ]
   },
   "config": {
     "pre-git": {
@@ -64,15 +61,20 @@
     ]
   },
   "scripts": {
-    "commit": "./node_modules/.bin/commit-wizard",
-    "clean": "rm -rf coverage",
-    "lint": "node_modules/.bin/eslint . --ext .json --ext .js",
-    "coverage": "node_modules/.bin/istanbul cover --include-all-sources --root src --print detail ./node_modules/mocha/bin/_mocha -- --recursive test",
-    "test": "npm run lint && npm run coverage",
-    "semantic-release": "./node_modules/.bin/semantic-release",
-    "build": "DOCKER_REPO=hfreire NAME=$npm_package_name ./share/docker/hooks/build",
-    "push": "DOCKER_REPO=hfreire NAME=$npm_package_name ./share/docker/hooks/push",
+    "eslint": "./node_modules/.bin/eslint --ext .json --ext .js .",
+    "istanbul": "node_modules/.bin/istanbul cover --include-all-sources --root src --print detail ./node_modules/mocha/bin/_mocha -- --recursive test",
+    "snyk:test": "./node_modules/.bin/snyk test",
+    "snyk:protect": "./node_modules/.bin/snyk protect",
+    "docker:build": "DOCKER_REPO=hfreire NAME=$npm_package_name ./share/docker/scripts/build",
+    "docker:push": "DOCKER_REPO=hfreire NAME=$npm_package_name ./share/docker/scripts/push",
+    "docker:test": "DOCKER_REPO=hfreire NAME=$npm_package_name ./share/docker/scripts/test",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "semantic-release": "./node_modules/.bin/semantic-release",
+    "clean": "rm -rf coverage",
+    "lint": "npm run eslint",
+    "prepare": "npm run snyk:protect",
+    "test": "npm run clean && npm run lint && npm run istanbul",
+    "commit": "./node_modules/.bin/commit-wizard",
     "start": "node src/app.js"
   }
 }

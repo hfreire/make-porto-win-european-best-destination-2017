@@ -1,7 +1,9 @@
 # Let's make :city_sunrise: Porto :trophy: win the :euro: European Best Destination :tada: 2017
 
-[![Build Status](https://travis-ci.org/hfreire/make-porto-win-european-best-destination-2017.svg?branch=master)](https://travis-ci.org/hfreire/make-porto-win-european-best-destination-2017)
+[![](https://github.com/hfreire/make-porto-win-european-best-destination-2017/workflows/ci/badge.svg)](https://github.com/hfreire/make-porto-win-european-best-destination-2017/actions?workflow=ci)
+[![](https://github.com/hfreire/make-porto-win-european-best-destination-2017/workflows/cd/badge.svg)](https://github.com/hfreire/make-porto-win-european-best-destination-2017/actions?workflow=cd)
 [![Coverage Status](https://coveralls.io/repos/github/hfreire/make-porto-win-european-best-destination-2017/badge.svg?branch=master)](https://coveralls.io/github/hfreire/make-porto-win-european-best-destination-2017?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/hfreire/make-porto-win-european-best-destination-2017/badge.svg)](https://snyk.io/test/github/hfreire/make-porto-win-european-best-destination-2017)
 [![](https://img.shields.io/github/release/hfreire/make-porto-win-european-best-destination-2017.svg)](https://github.com/hfreire/make-porto-win-european-best-destination-2017/releases)
 [![Docker Stars](https://img.shields.io/docker/stars/hfreire/make-porto-win-european-best-destination-2017.svg)](https://hub.docker.com/r/hfreire/make-porto-win-european-best-destination-2017/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hfreire/make-porto-win-european-best-destination-2017.svg)](https://hub.docker.com/r/hfreire/make-porto-win-european-best-destination-2017/)
@@ -96,7 +98,7 @@ npm run build
 </p>
 
 ### How to contribute
-You can contribute either with code (e.g., new features, bug fixes and documentation) or by [donating 5 EUR](https://paypal.me/hfreire/5). You can read the [contributing guidelines](CONTRIBUTING.md) for instructions on how to contribute with code. 
+You can contribute either with code (e.g., new features, bug fixes and documentation) or by [donating 5 EUR](https://paypal.me/hfreire/5). You can read the [contributing guidelines](CONTRIBUTING.md) for instructions on how to contribute with code.
 
 All donation proceedings will go to the [Sverige för UNHCR](https://sverigeforunhcr.se), a swedish partner of the [UNHCR - The UN Refugee Agency](http://www.unhcr.org), a global organisation dedicated to saving lives, protecting rights and building a better future for refugees, forcibly displaced communities and stateless people.
 
