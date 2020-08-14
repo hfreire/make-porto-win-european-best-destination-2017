@@ -18,7 +18,7 @@
   "dependencies": {
     "bluebird": "3.7.2",
     "health-checkup": "1.0.39",
-    "lodash": "4.17.19",
+    "lodash": "4.17.20",
     "modern-logger": "1.5.74",
     "pollmommy": "1.1.62",
     "serverful": "1.4.82"
