@@ -20,7 +20,7 @@
     "health-checkup": "1.0.40",
     "lodash": "4.17.20",
     "modern-logger": "1.5.75",
-    "pollmommy": "1.1.63",
+    "pollmommy": "1.1.64",
     "serverful": "1.4.83"
   },
   "devDependencies": {
