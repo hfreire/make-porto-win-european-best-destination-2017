@@ -17,7 +17,7 @@
   "homepage": "https://github.com/hfreire/make-porto-win-european-best-destination-2017#readme",
   "dependencies": {
     "bluebird": "3.7.2",
-    "health-checkup": "1.0.39",
+    "health-checkup": "1.0.40",
     "lodash": "4.17.20",
     "modern-logger": "1.5.75",
     "pollmommy": "1.1.62",
